@@ -1,0 +1,135 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="Source Files\View">
+      <UniqueIdentifier>{4dab2828-ac23-487a-9694-4d721eb38b36}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\View\StatusBarPanel">
+      <UniqueIdentifier>{6436768e-a520-40ea-b2c3-47a31052ce7c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\View\ContentPanel">
+      <UniqueIdentifier>{5a0c4b55-3868-4b46-ac37-527b22643762}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\View\BottomPanel">
+      <UniqueIdentifier>{5c2a383d-bae1-481c-94dd-ba26df6e6446}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Utils">
+      <UniqueIdentifier>{3754a995-837c-49b1-bca3-d1c4677581ad}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\UIConfig">
+      <UniqueIdentifier>{d8e3a1c0-4b2a-4c7a-9e6b-2f0c4d5a8b9c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\System">
+      <UniqueIdentifier>{a9f0d311-8c4e-4f1b-b2d6-3e7a9c0d4e5f}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Main.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="App.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="MainWindow.cpp">
+      <Filter>Source Files\View</Filter>
+    </ClCompile>
+    <ClCompile Include="StatusBarPanel.cpp">
+      <Filter>Source Files\View\StatusBarPanel</Filter>
+    </ClCompile>
+    <ClCompile Include="System\Dpi.cpp">
+      <Filter>Source Files\System</Filter>
+    </ClCompile>
+    <ClCompile Include="System\Elevation.cpp">
+      <Filter>Source Files\System</Filter>
+    </ClCompile>
+    <ClCompile Include="System\GdiResources.cpp">
+      <Filter>Source Files\System</Filter>
+    </ClCompile>
+    <ClCompile Include="BottomPanel.cpp">
+      <Filter>Source Files\View\BottomPanel</Filter>
+    </ClCompile>
+    <ClCompile Include="ContentPanel.cpp">
+      <Filter>Source Files\View\ContentPanel</Filter>
+    </ClCompile>
+    <ClCompile Include="UIConfig\UIConfig.cpp">
+      <Filter>Source Files\UIConfig</Filter>
+    </ClCompile>
+    <ClCompile Include="UIConfig\UIConfig_Init.cpp">
+      <Filter>Source Files\UIConfig</Filter>
+    </ClCompile>
+    <ClCompile Include="UIConfig\UIConfig_Layout.cpp">
+      <Filter>Source Files\UIConfig</Filter>
+    </ClCompile>
+    <ClCompile Include="UIConfig\UIConfig_Register.cpp">
+      <Filter>Source Files\UIConfig</Filter>
+    </ClCompile>
+    <ClCompile Include="UIConfig\UIConfig_Theme.cpp">
+      <Filter>Source Files\UIConfig</Filter>
+    </ClCompile>
+    <ClCompile Include="Utils\DeployEngine.cpp">
+      <Filter>Source Files\Utils</Filter>
+    </ClCompile>
+    <ClCompile Include="Utils\DiskScanner.cpp">
+      <Filter>Source Files\Utils</Filter>
+    </ClCompile>
+    <ClCompile Include="Utils\ImageParser.cpp">
+      <Filter>Source Files\Utils</Filter>
+    </ClCompile>
+    <ClCompile Include="Utils\SchemeParser.cpp">
+      <Filter>Source Files\Utils</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="MainWindow.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="App.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="System\System.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="WindowLayoutConfig.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ContentPanel.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="BottomPanel.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="StatusBarPanel.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="GlobalResources.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="UIConfig\UIConfig.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Utils\DeployEngine.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Utils\DiskScanner.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Utils\ImageParser.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Utils\SchemeParser.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>

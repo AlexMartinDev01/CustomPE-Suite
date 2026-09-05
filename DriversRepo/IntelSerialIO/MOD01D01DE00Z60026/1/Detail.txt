@@ -1,0 +1,13 @@
+[INFORMATION]
+Projects=Emira_ARX;Vantage_ARX;Macan_ARX;iX1_ARX;FTYPE_ARX;
+OSs=Windows Next All X64;
+WHQL=Y,
+ProviderFullName=Intel
+SelectedDriverType=Only Upload Source
+Installer=%RELATIVE_PATH%\InstallDriver.cmd
+Parameters=
+InfFiles=
+DriverUtilityInstaller=
+DriverUtilityParameters=
+UWPSourceFolder=
+UWPInstaller=

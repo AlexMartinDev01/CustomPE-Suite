@@ -1,0 +1,7 @@
+<Solution>
+  <Configurations>
+    <Platform Name="x64" />
+    <Platform Name="x86" />
+  </Configurations>
+  <Project Path="WinPE.vcxproj" Id="4785fde3-d76d-4c6c-af74-02093897492b" />
+</Solution>

@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<OemPartitionSchemes xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <!-- Partition scheme 1: EFI + MSR + System + WinRE recovery (20 GB) -->
+  <PartitionScheme>
+    <Name>OEM_Partition_1</Name>
+    <xNappHddSetting>
+      <Partitions>
+        <!-- EFI System Partition -->
+        <ESP>
+          <Type>efi</Type>
+          <Size>260</Size>
+          <FileSystem>FAT32</FileSystem>
+          <Label>ESP</Label>
+          <Letter>R</Letter>
+        </ESP>
+        <!-- Microsoft Reserved Partition -->
+        <MSR>
+          <Type>msr</Type>
+          <Size>16</Size>
+        </MSR>
+        <!-- Operating System Partition: Label changed to System -->
+        <OS>
+          <Type>primary</Type>
+          <Size></Size>
+          <FileSystem>NTFS</FileSystem>
+          <Label>System</Label>
+          <Letter>N</Letter>
+        </OS>
+        <!-- Windows Recovery Environment: Size is 20GB -->
+        <WinRE>
+          <Type>primary</Type>
+          <Size>20480</Size>
+          <FileSystem>NTFS</FileSystem>
+          <Label>Recovery</Label>
+          <Id>de94bba4-06d1-4d40-a16a-bfd50179d6ac</Id>
+          <Attributes>0x8000000000000001</Attributes>
+          <Letter>W</Letter>
+        </WinRE>
+      </Partitions>
+    </xNappHddSetting>
+  </PartitionScheme>
+
+  <!-- Partition scheme 2: EFI + MSR + System (no WinRE) -->
+  <PartitionScheme>
+    <Name>OEM_Partition_2</Name>
+    <xNappHddSetting>
+      <Partitions>
+        <!-- EFI System Partition: Stores UEFI boot files -->
+        <ESP>
+          <Type>efi</Type>
+          <Size>260</Size>
+          <FileSystem>FAT32</FileSystem>
+          <Label>ESP</Label>
+          <Letter>R</Letter>
+        </ESP>
+        <!-- Microsoft Reserved Partition: Required for GPT disks -->
+        <MSR>
+          <Type>msr</Type>
+          <Size>16</Size>
+        </MSR>
+        <!-- Operating System Partition: Consumes all remaining disk space -->
+        <OS>
+          <Type>primary</Type>
+          <Size></Size>
+          <FileSystem>NTFS</FileSystem>
+          <Label>System</Label>
+          <Letter>N</Letter>
+        </OS>
+      </Partitions>
+    </xNappHddSetting>
+  </PartitionScheme>
+</OemPartitionSchemes>

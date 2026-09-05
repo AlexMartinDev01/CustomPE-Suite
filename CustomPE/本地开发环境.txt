@@ -1,0 +1,12 @@
+本地的开发环境如下：
+编程语言运行时（D:\Environment）
+Node.js v24.18.1 + npm 11.16.0
+Python 3.14.6
+C/C++ 工具链（D:\Program Files）
+Visual Studio 2022 Enterprise（17.14），MSVC 14.44.35207
+Windows SDK 10.0.26100.0（位于 D:\Windows Kits\10）
+VS 自带 CMake 3.31.6（未加入系统 PATH，路径：D:\Program Files\Microsoft Visual Studio\2022\Enterprise\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe）
+通用工具
+7-Zip 26.02（D:\Program Files\7-Zip）
+SumatraPDF 3.5.2（D:\Program Files\SumatraPDF）
+VMware Workstation（D:\VMware\VMware Workstation）
