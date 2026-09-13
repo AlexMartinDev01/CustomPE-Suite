@@ -3,6 +3,9 @@
   <!-- Partition scheme 1: EFI + MSR + System + WinRE recovery (20 GB) -->
   <PartitionScheme>
     <Name>OEM_Partition_1</Name>
+    <!-- Per-scheme switch: when true and the scheme contains a WinRE partition,
+         the deployment installs Alt+F10 (WinRE) recovery after bcdboot. -->
+    <EnableAltF10Recovery>true</EnableAltF10Recovery>
     <xNappHddSetting>
       <Partitions>
         <!-- EFI System Partition -->
@@ -43,6 +46,8 @@
   <!-- Partition scheme 2: EFI + MSR + System (no WinRE) -->
   <PartitionScheme>
     <Name>OEM_Partition_2</Name>
+    <!-- Scheme without a recovery partition: Alt+F10 recovery stays disabled. -->
+    <EnableAltF10Recovery>false</EnableAltF10Recovery>
     <xNappHddSetting>
       <Partitions>
         <!-- EFI System Partition: Stores UEFI boot files -->

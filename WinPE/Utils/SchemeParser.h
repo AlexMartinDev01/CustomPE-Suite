@@ -28,6 +28,7 @@ typedef struct SchemeInfo
     wchar_t    File[MAX_PATH];     // 该方案所在 XML 文件的完整路径（部署/回读时用于定位）
     int        PartCount;          // 实际解析出的分区数量（<= SCHEME_MAX_PARTS）
     SchemePart Parts[SCHEME_MAX_PARTS]; // 分区明细数组，下标 0..PartCount-1
+    BOOL       EnableAltF10Recovery;    // true=方案部署后启用 Alt+F10(WinRE) 一键恢复（XML <EnableAltF10Recovery>）
 } SchemeInfo;
 
 // 解析单个 XML 文件里的 1..N 个方案（合并文件格式 <PartitionScheme> 块，

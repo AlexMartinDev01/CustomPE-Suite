@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
     <Filter Include="Source Files">
@@ -78,6 +78,9 @@
     <ClCompile Include="UIConfig\UIConfig_Theme.cpp">
       <Filter>Source Files\UIConfig</Filter>
     </ClCompile>
+    <ClCompile Include="Utils\AcerAltF10Recovery.cpp">
+      <Filter>Source Files\Utils</Filter>
+    </ClCompile>
     <ClCompile Include="Utils\DeployEngine.cpp">
       <Filter>Source Files\Utils</Filter>
     </ClCompile>
@@ -117,6 +120,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="UIConfig\UIConfig.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Utils\AcerAltF10Recovery.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Utils\DeployEngine.h">

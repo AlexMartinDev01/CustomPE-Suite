@@ -47,6 +47,16 @@ static BOOL GetTag(const wchar_t* xml, const wchar_t* tag, wchar_t* out, int out
     return FALSE;                            // 全文本中找不到目标标签，返回 FALSE
 }
 
+/* 读取一个布尔标签：内容为 true/1/yes（忽略大小写）视为开，缺省/其它为关 */
+static BOOL GetBoolTag(const wchar_t* xml, const wchar_t* tag)
+{
+    wchar_t v[16] = L"";
+    if (!GetTag(xml, tag, v, 16)) return FALSE;   // 无标签 = 关
+    return (_wcsicmp(v, L"true") == 0 ||          // true
+            _wcsicmp(v, L"1") == 0 ||             // 1
+            _wcsicmp(v, L"yes") == 0);            // yes
+}
+
 /* 提取第 index 个 "<tag ...> ... </tag>" 块（从 0 开始；支持开标签带属性） */
 static BOOL GetBlockN(const wchar_t* xml, const wchar_t* tag, int index,
                       wchar_t* out, int outLen)
@@ -181,6 +191,7 @@ int SchemeParseFileEx(const wchar_t* path, SchemeInfo* out, int maxOut)
             lstrcpynW(s->Name, nm, 160);          // 写方案名
             lstrcpynW(s->File, path, MAX_PATH);   // 写源文件路径
             s->PartCount = ParseSchemeDocParts(block, s->Parts, SCHEME_MAX_PARTS); // 解析该块内分区
+            s->EnableAltF10Recovery = GetBoolTag(block, L"EnableAltF10Recovery");   // 方案级开关
             if (s->PartCount > 0) parsed++;       // 只有真正解析出分区才计数
         }
     }
@@ -192,6 +203,7 @@ int SchemeParseFileEx(const wchar_t* path, SchemeInfo* out, int maxOut)
         SchemeNameFromFile(path, s->Name, 160);   // 方案名 = 文件名
         lstrcpynW(s->File, path, MAX_PATH);       // 记录路径
         s->PartCount = ParseSchemeDocParts(w, s->Parts, SCHEME_MAX_PARTS); // 解析整份文档
+        s->EnableAltF10Recovery = GetBoolTag(w, L"EnableAltF10Recovery");   // 方案级开关
         if (s->PartCount > 0) parsed = 1;         // 成功则计数为 1
     }
 

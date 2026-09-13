@@ -170,6 +170,7 @@
     <ClCompile Include="UIConfig\UIConfig_Layout.cpp" />
     <ClCompile Include="UIConfig\UIConfig_Register.cpp" />
     <ClCompile Include="UIConfig\UIConfig_Theme.cpp" />
+    <ClCompile Include="Utils\AcerAltF10Recovery.cpp" />
     <ClCompile Include="Utils\DeployEngine.cpp" />
     <ClCompile Include="Utils\DiskScanner.cpp" />
     <ClCompile Include="Utils\ImageParser.cpp" />
@@ -180,6 +181,7 @@
     <ClInclude Include="App.h" />
     <ClInclude Include="ContentPanel.h" />
     <ClInclude Include="GlobalResources.h" />
+    <ClInclude Include="Utils\AcerAltF10Recovery.h" />
     <ClInclude Include="Utils\DeployEngine.h" />
     <ClInclude Include="Utils\DiskScanner.h" />
     <ClInclude Include="Utils\ImageParser.h" />

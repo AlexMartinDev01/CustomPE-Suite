@@ -1,6 +1,7 @@
 #define _CRT_SECURE_NO_WARNINGS // 关闭 CRT 不安全函数告警
 #include "DeployEngine.h"        // 引入本模块头：DeployJob/回调类型/接口声明
 #include "ImageParser.h"         // 引入镜像解析模块：用于 ISO 挂载解析部署镜像源
+#include "AcerAltF10Recovery.h"  // 引入 Alt+F10(WinRE) 恢复安装工具（方案开关+WinRE分区才生效）
 
 #include <stdio.h>               // 标准 I/O：swprintf 宽字符格式化
 #include <stdlib.h>              // 标准库：malloc/free
@@ -339,6 +340,11 @@ static int BuildPartitionScript(const DeployJob* job, const wchar_t* dir,
             if (p->Attributes)                 // 需要属性
             {
                 swprintf(line, 640, L"gpt attributes=0x%016I64x\r\n", p->Attributes); // 写属性
+                ScriptLine(h, log, user, line);// 写入
+            }
+            if (p->Letter[0])                  // 方案要求分配盘符（如 WinRE 的 W:）
+            {
+                swprintf(line, 640, L"assign letter=%ls\r\n", p->Letter); // 临时分配，供复制 WinRE
                 ScriptLine(h, log, user, line);// 写入
             }
         }
@@ -745,6 +751,9 @@ int DeployRun(const DeployJob* job, DeployLogFn log, DeployProgressFn progress, 
 
     if (WriteBoot(job, win, esp, log, progress, user) != 0) // bcdboot
         return DEPLOY_BOOT_FAIL;               // 失败
+    // Alt+F10(WinRE) 恢复安装：仅当分区方案 EnableAltF10Recovery=开 且含 WinRE 分区时执行；
+    // 工具类只写日志不弹窗，失败不影响主部署结果。
+    AcerAltF10Install(&job->Scheme, win, esp, log, user);
     if (progress) progress(100, user);         // 总进度 100%
     if (log) log(L"[deploy] deployment completed successfully.", user); // 完成
     return DEPLOY_OK;                          // 成功
